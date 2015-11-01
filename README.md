@@ -1,3 +1,3 @@
 # WSJ Hustler
 
-* WSJ Hustler is a chrome extension that enable you to see the full content of wsj article if blocked
+* Search WSJ article in google in order to hopefully get a link that enables the full article content

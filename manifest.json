@@ -1,14 +1,14 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 1,
 
     "name": "WSJ Hustler",
-    "description": "show only plain text wikipedia so other people won't know you are looking at it!",
+    "description": "Search WSJ article in google in order to hopefully get a link that enables the full article content",
     "version": "1.2",
 
     "browser_action": {
         "default_icon": "hustler.png",
         "default_popup": "popup.html",
-        "default_title": "Plain text wikipedia"
+        "default_title": "WSJ Hustler"
     },
 
     "content_scripts": [
