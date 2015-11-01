@@ -1,17 +1,12 @@
 /**
  * Created by yicheng3 on 5/3/15.
  */
-console.log("content injection!!!")
 
-var enabled = true;
-
-
-
-
-//var p = undefined
+enabled = false
 
 $(function () {
-    chrome.storage.local.get('enabled', function(data){
+
+    chrome.storage.local.get('enabled', function (data) {
         console.log("data", data)
         if (jQuery.isEmptyObject(data)) {
             console.log("empty")
@@ -19,16 +14,17 @@ $(function () {
                 console.log("saved")
             })
         }
-        else{
+        else {
             enabled = data['enabled']
         }
-        if (!enabled) return;
-        var text = document.body.textContent
-        $("body").remove()
-        var body = $("<body></body>").append(
-            $("<textarea style='height:100%; width:80%; margin-left: auto; margin-right: auto'></textarea>").val(text))
-        $("html").append(body)
+
+        if (enabled) {
+            chrome.storage.local.set({'enabled': !enabled}, function () {
+                console.log("saved")
+            })
+            var headline = $(".wsj-article-headline")[0].innerText
+            var params = {q: headline};
+            window.location.href = "https://www.google.com/search?" + $.param(params) + "+site:wsj.com";
+        }
     })
 });
-
-console.log("content end")
