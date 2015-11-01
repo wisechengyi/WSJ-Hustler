@@ -13,8 +13,8 @@
 
     "content_scripts": [
         {
-            "matches": ["http://*.wikipedia.org/*","https://*.wikipedia.org/*"],
-            "js": ["jquery.min.js", "swfobject.js", "twitch.js"]
+            "matches": ["http://*.wsj.com/*","https://*.wsj.com/*"],
+            "js": ["jquery.min.js", "twitch.js"]
         }
     ],
 
