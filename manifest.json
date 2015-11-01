@@ -1,12 +1,12 @@
 {
     "manifest_version": 2,
 
-    "name": "WikiMask",
+    "name": "WSJ Hustler",
     "description": "show only plain text wikipedia so other people won't know you are looking at it!",
     "version": "1.2",
 
     "browser_action": {
-        "default_icon": "ws.png",
+        "default_icon": "hustler.png",
         "default_popup": "popup.html",
         "default_title": "Plain text wikipedia"
     },
@@ -14,7 +14,7 @@
     "content_scripts": [
         {
             "matches": ["http://*.wsj.com/*","https://*.wsj.com/*"],
-            "js": ["jquery.min.js", "twitch.js"]
+            "js": ["jquery.min.js", "hustle.js"]
         }
     ],
 
