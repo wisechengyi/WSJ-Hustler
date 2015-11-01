@@ -1,27 +1,31 @@
 {
-    "manifest_version": 2,
-
-    "name": "WSJ Hustler",
-    "description": "Search WSJ article in google in order to hopefully get a link that enables the full article content",
-    "version": "1.2",
-
-    "browser_action": {
-        "default_icon": "hustler.png",
-        "default_popup": "popup.html",
-        "default_title": "WSJ Hustler"
-    },
-
-    "content_scripts": [
-        {
-            "matches": ["http://*.wsj.com/*","https://*.wsj.com/*"],
-            "js": ["jquery.min.js", "hustle.js"]
-        }
-    ],
-
-    "permissions": [
-        "activeTab",
-        "https://ajax.googleapis.com/",
-        "storage",
-        "https://www.google.com/*"
-    ]
+  "manifest_version": 2,
+  "name": "Article Hustler",
+  "description": "Search WSJ article in google for links back that enables the full article content or to other sources",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_icon": "hustler.png",
+    "default_popup": "popup.html",
+    "default_title": "Article Hustler"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.wsj.com/*",
+        "https://*.wsj.com/*"
+      ],
+      "js": [
+        "jquery.min.js",
+        "hustle.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "cookies",
+    "https://ajax.googleapis.com/",
+    "storage",
+    "windows",
+    "https://www.google.com/*"
+  ]
 }

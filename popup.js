@@ -1,23 +1,5 @@
-$("#enable").click(function () {
-    chrome.storage.local.set({'enabled': true}, function () {
-        console.log("saved")
-    })
-    chrome.tabs.getSelected(null, function (tab) {
-        var code = 'window.location.reload();';
-        chrome.tabs.executeScript(tab.id, {code: code});
-    });
-    window.close();
-
-})
-
-$("#disable").click(function () {
-    chrome.storage.local.set({'enabled': false}, function () {
-        console.log("saved")
-    })
-    chrome.tabs.getSelected(null, function (tab) {
-        var code = 'window.location.reload();';
-        chrome.tabs.executeScript(tab.id, {code: code});
-    });
-    window.close();
-
+chrome.storage.local.get('headline', function (data) {
+    var headline = data.headline;
+    var target_url = "https://www.google.com/search?q=" + encodeURIComponent(headline);
+    chrome.windows.create({"url": target_url});
 })
