@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Article Hustler",
-  "description": "Search WSJ article in google for links back that enables the full article content or to other sources",
-  "version": "0.0.1",
+  "description": "Search WSJ article in google for links that enables the full article content or to other sources",
+  "version": "0.0.2",
   "browser_action": {
     "default_icon": "hustler.png",
     "default_popup": "popup.html",
